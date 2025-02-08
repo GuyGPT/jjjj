@@ -304,6 +304,40 @@ iframe {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
   padding: 0.5rem; /* Add padding for better spacing */
   margin: 0 auto; /* Center the dropdown menu */
+  border-left: 4px solid var(--primary); /* Ajout d'une bordure gauche */
+  border-right: 4px solid var(--primary); /* Ajout d'une bordure droite */
+}
+
+/* Styles spécifiques pour le mode desktop responsive */
+@media (min-width: 768px) {
+  .dropdown-menu {
+    border-left: 4px solid var(--primary); /* Bordure gauche */
+    border-right: 4px solid var(--primary); /* Bordure droite */
+    top: 100%; /* Positionnement correct du dropdown */
+    transform-origin: top center; /* Origine de la transformation */
+    animation: slideInDesktop 0.3s ease-in-out forwards; /* Animation plus rapide et direction */
+    display: flex; /* Ajout de flex pour l'affichage latéral */
+    flex-direction: row; /* Disposition en ligne */
+  }
+}
+
+@keyframes slideInDesktop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Déplacement initial plus important */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Position finale */
+  }
+}
+
+/* Styles spécifiques pour le mode mobile responsive */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    border-left: 4px solid var(--primary); /* Ajout d'une bordure gauche */
+    border-right: 4px solid var(--primary); /* Ajout d'une bordure droite */
+  }
 }
 
 .dropdown-menu h3 {
@@ -330,17 +364,18 @@ iframe {
 }
 
 .dropdown-menu .px-4.py-2 {
-  width: 100%; /* Ensure full width */
+  width: auto; /* Ajustement de la largeur */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align items */
+  align-items: flex-start; /* Alignement à gauche */
+  margin-right: 10px; /* Espacement entre les colonnes */
 }
 
 .dropdown-menu .mt-1.space-y-1 {
   width: 100%; /* Ensure full width */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align items */
+  align-items: flex-start; /* Alignement à gauche */
 }
 
 /* Adjust main dropdown button width */
@@ -384,6 +419,7 @@ iframe {
 [data-theme="dark"] .dropdown-menu {
     background-color: black;
     border: 1px solid #F8E061;
+    outline: 2px solid white; /* Ajout d'un contour blanc */
 }
 
 [data-theme="dark"] .dropdown-menu h3 {
@@ -398,4 +434,25 @@ iframe {
     color:  #F8E061 !important;
     border-color:  #F8E061 !important;
     background-color: black !important;
+}
+
+/* Nouvelles règles pour le thème clair */
+[data-theme="light"] .dropdown-menu {
+    background-color: white;
+    border: 1px solid black;
+    outline: 2px solid yellow; /* Ajout d'un contour jaune */
+}
+
+[data-theme="light"] .dropdown-menu h3 {
+    color: black;
+}
+
+[data-theme="light"] .dropdown-menu a {
+    color: black;
+}
+
+[data-theme="light"] .dropdown-link {
+    color: black !important;
+    border-color: black !important;
+    background-color: white !important;
 }

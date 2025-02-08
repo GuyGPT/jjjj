@@ -383,7 +383,7 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
 
       {isOpen && (
         <div className="absolute left-0 mt-2 w-auto rounded-md shadow-lg bg-white border border-black z-50 dropdown-menu">
-          <div className="py-1">
+          <div className="py-1 flex"> {/* Utilisation de flex pour l'affichage latéral */}
             {children}
           </div>
         </div>
