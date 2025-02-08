@@ -292,8 +292,8 @@ iframe {
 
 /* Dropdown Menu Styles */
 .dropdown-menu {
-  min-width: 200px; /* Minimum width for dropdown */
-  max-width: 300px; /* Maximum width for dropdown */
+  min-width: 250px; /* Adjusted minimum width */
+  max-width: none; /* Removed maximum width restriction */
   width: fit-content; /* Adjust width to fit content */
   display: flex;
   flex-direction: column;
