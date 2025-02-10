@@ -5,7 +5,7 @@ import {
   LineChart, Target, Award, HandshakeIcon, Presentation,
   BarChart, Calendar, MessageCircle, Calculator, Laptop,
   Building2, ChartPie, Trophy, Lightbulb, Facebook,
-  MessageSquare, Twitter, Send
+  MessageSquare, Twitter, Send, X as XIcon, Whatsapp
 } from 'lucide-react';
 
 const Navbar = () => {
@@ -315,27 +315,27 @@ const Navbar = () => {
             </DropdownMenu>
 
             <DropdownMenu title="Communauté" isOpen={openDropdown === 'Communauté'} toggleDropdown={toggleDropdown}>
-              <div className="space-y-1 max-h-[60vh] overflow-y-auto">
+              <div className="space-y-1 max-h-[60vh] overflow-y-auto social-icons">
                 <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap mb-4" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
                     <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Réseaux Sociaux
                   </h3>
-                  <div className="mt-1 space-y-1">
-                    <NavLink href="https://facebook.com/your-page" isDropdown className="flex items-center gap-2">
-                      <Facebook size={18} className="shrink-0" />
+                  <div className="mt-1 space-y-3">
+                    <NavLink href="https://facebook.com/your-page" isDropdown className="flex items-center gap-3 px-4 py-2">
+                      <Facebook size={20} className="shrink-0" />
                       <span className="text-left">Facebook</span>
                     </NavLink>
-                    <NavLink href="https://t.me/your-channel" isDropdown className="flex items-center gap-2">
-                      <Send size={18} className="shrink-0" />
+                    <NavLink href="https://t.me/your-channel" isDropdown className="flex items-center gap-3 px-4 py-2">
+                      <Send size={20} className="shrink-0" />
                       <span className="text-left">Telegram</span>
                     </NavLink>
-                    <NavLink href="https://twitter.com/your-handle" isDropdown className="flex items-center gap-2">
-                      <Twitter size={18} className="shrink-0" />
+                    <NavLink href="https://twitter.com/your-handle" isDropdown className="flex items-center gap-3 px-4 py-2">
+                      <XIcon size={20} className="shrink-0" />
                       <span className="text-left">X Officiel</span>
                     </NavLink>
-                    <NavLink href="https://wa.me/your-number" isDropdown className="flex items-center gap-2">
-                      <MessageSquare size={18} className="shrink-0" />
+                    <NavLink href="https://wa.me/your-number" isDropdown className="flex items-center gap-3 px-4 py-2">
+                      <Whatsapp size={20} className="shrink-0" />
                       <span className="text-left">WhatsApp</span>
                     </NavLink>
                   </div>
