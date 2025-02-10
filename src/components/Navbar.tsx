@@ -338,10 +338,12 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
     <div className="relative">
       <button
         onClick={() => toggleDropdown(title)}
-        className="px-3 py-2 rounded-md text-sm font-medium border transition-colors flex items-center gap-1 dropdown-button"
+        className={`px-3 py-2 rounded-md text-sm font-medium border-2 transition-colors flex items-center gap-1 dropdown-button ${isOpen ? 'border-opacity-100' : 'border-opacity-50'}`}
         style={{
           color: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
-          borderColor: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
+          borderColor: isOpen 
+            ? (document.body.getAttribute('data-theme') === 'dark' ? '#FFFFFF' : '#FFE600')
+            : (document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF'),
           backgroundColor: '#040504'
         }}
       >
