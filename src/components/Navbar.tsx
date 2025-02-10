@@ -338,7 +338,7 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
     <div className="relative">
       <button
         onClick={() => toggleDropdown(title)}
-        className={`px-3 py-2 rounded-md text-sm font-medium border-2 transition-colors flex items-center gap-1 dropdown-button ${isOpen ? 'border-opacity-100' : 'border-opacity-50'}`}
+        className={`px-3 py-2 rounded-md text-sm font-medium border-2 transition-colors flex items-center gap-1 dropdown-button ${isOpen ? 'active border-opacity-100' : 'border-opacity-50'}`}
         style={{
           color: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
           borderColor: isOpen 
@@ -351,8 +351,8 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 mt-16 w-auto rounded-md shadow-xl bg-white border border-black z-50 dropdown-menu transition-all duration-200 ease-in-out opacity-100 transform translate-y-0">
-          <div className="py-6 flex space-x-8">
+        <div className="absolute left-0 mt-4 w-auto rounded-lg shadow-2xl bg-white border border-black z-50 dropdown-menu transition-all duration-300 ease-in-out transform origin-top">
+          <div className="py-4 flex space-x-12">
             {children}
           </div>
         </div>
@@ -364,7 +364,7 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
 const NavLink = ({ href, children, isDropdown, className }: { href: string; children: React.ReactNode; isDropdown?: boolean; className?: string }) => (
   <a
     href={href}
-    className={`px-3 py-3 rounded-md text-sm font-medium border transition-colors ${isDropdown ? 'block w-full text-left dropdown-link mb-2' : ''} ${className || ''}`}
+    className={`px-3 py-2 rounded-md text-sm font-medium border transition-colors ${isDropdown ? 'block w-full text-left dropdown-link' : ''} ${className || ''}`}
     style={{
       color: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
       borderColor: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
