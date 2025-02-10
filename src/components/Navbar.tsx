@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun, Wrench, Monitor, Briefcase, Leaf, BookOpen, Users } from 'lucide-react';
+import { 
+  Menu, X, Moon, Sun, Wrench, Monitor, Briefcase, 
+  Leaf, BookOpen, Users, GraduationCap, Brain,
+  LineChart, Target, Award, HandshakeIcon, Presentation,
+  BarChart, Calendar, MessageCircle, Calculator, Laptop,
+  Building2, ChartPie, Trophy, Lightbulb, Facebook,
+  MessageSquare, Twitter, Send
+} from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -68,7 +75,7 @@ const Navbar = () => {
                 {/* Services Numériques */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Monitor className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Laptop className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Services Numériques
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -87,7 +94,7 @@ const Navbar = () => {
                 {/* Services d'Affaires */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Briefcase className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Building2 className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Services d'Affaires
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -119,7 +126,7 @@ const Navbar = () => {
                 {/* Formations Professionnelles */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <BookOpen className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <GraduationCap className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Formations Professionnelles
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -135,7 +142,7 @@ const Navbar = () => {
                 {/* Consultance et Accompagnement */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <HandshakeIcon className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Consultance et Accompagnement
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -179,7 +186,7 @@ const Navbar = () => {
                 {/* Ateliers de Développement Personnel */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Brain className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Ateliers de Développement Personnel
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -203,7 +210,7 @@ const Navbar = () => {
                 {/* Intelligence Financière */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Briefcase className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Calculator className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Intelligence Financière
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -227,7 +234,7 @@ const Navbar = () => {
                 {/* Liens importants */}
                 <div className="px-4 py-2 border-t border-[var(--primary)]">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap mt-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <BookOpen className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Calendar className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Informations Pratiques
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -247,7 +254,7 @@ const Navbar = () => {
                 {/* Coaching Professionnel */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Briefcase className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <LineChart className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Coaching Professionnel
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -263,7 +270,7 @@ const Navbar = () => {
                 {/* Mentorat Personnalisé */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Target className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Mentorat Personnalisé
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -279,7 +286,7 @@ const Navbar = () => {
                 {/* Programmes de Mentorat */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <BookOpen className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Award className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Programmes de Mentorat
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -295,7 +302,7 @@ const Navbar = () => {
                 {/* Conférences et Webinaires */}
                 <div className="px-4 py-2 border-t border-[var(--primary)]">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap mt-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Monitor className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Presentation className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Conférences et Webinaires
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -307,8 +314,36 @@ const Navbar = () => {
               </div>
             </DropdownMenu>
 
+            <DropdownMenu title="Communauté" isOpen={openDropdown === 'Communauté'} toggleDropdown={toggleDropdown}>
+              <div className="space-y-1 max-h-[60vh] overflow-y-auto">
+                <div className="px-4 py-2">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    Réseaux Sociaux
+                  </h3>
+                  <div className="mt-1 space-y-1">
+                    <NavLink href="https://facebook.com/your-page" isDropdown className="flex items-center gap-2">
+                      <Facebook size={18} className="shrink-0" />
+                      <span className="text-left">Facebook</span>
+                    </NavLink>
+                    <NavLink href="https://t.me/your-channel" isDropdown className="flex items-center gap-2">
+                      <Send size={18} className="shrink-0" />
+                      <span className="text-left">Telegram</span>
+                    </NavLink>
+                    <NavLink href="https://twitter.com/your-handle" isDropdown className="flex items-center gap-2">
+                      <Twitter size={18} className="shrink-0" />
+                      <span className="text-left">X Officiel</span>
+                    </NavLink>
+                    <NavLink href="https://wa.me/your-number" isDropdown className="flex items-center gap-2">
+                      <MessageSquare size={18} className="shrink-0" />
+                      <span className="text-left">WhatsApp</span>
+                    </NavLink>
+                  </div>
+                </div>
+              </div>
+            </DropdownMenu>
+
             <NavLink href="#contact">Contact</NavLink>
-            <NavLink href="#communaute">Communauté</NavLink>
             <button
               onClick={toggleTheme}
               className="inline-flex items-center justify-center p-2 rounded-md border transition-colors"

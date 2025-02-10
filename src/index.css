@@ -896,3 +896,29 @@ chatbot-button {
 .dropdown-menu .border-t h3 {
   margin-bottom: 0.5rem;
 }
+
+/* Styles spécifiques pour les liens réseaux sociaux */
+.dropdown-menu .social-icons a {
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .dropdown-menu .social-icons svg {
+  color: #F8E061;
+}
+
+[data-theme="light"] .dropdown-menu .social-icons svg {
+  color: #000000;
+}
+
+.dropdown-menu .social-icons a:hover svg {
+  transform: scale(1.2);
+}
+
+.dropdown-menu .social-icons {
+  min-width: 200px;
+}
+
+/* Animation spéciale pour les icônes des réseaux sociaux */
+.dropdown-menu .social-icons a svg {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
