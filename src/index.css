@@ -219,7 +219,7 @@ iframe {
 .menu button,
 .menu a,
 .theme-toggle,
-.chatbot-button {
+chatbot-button {
   color: var(--primary) !important;
   border-color: var(--primary) !important;
   background-color: transparent !important;
@@ -758,4 +758,116 @@ iframe {
 .dropdown-menu .border-t .nav-link {
   padding-left: 0;
   margin-left: 0;
+}
+
+.dropdown-menu .border-t {
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.dropdown-menu .border-t .dropdown-link {
+  text-align: center;
+  display: block;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem auto;
+  width: 90%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* Style spécifique pour les boutons d'information pratique */
+.dropdown-menu .border-t .dropdown-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu .border-t .info-link {
+  text-align: center;
+  display: block;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem auto;
+  width: 90%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.dropdown-menu .border-t .info-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu .border-t .info-text {
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: inherit !important;
+}
+
+[data-theme="dark"] .dropdown-menu .border-t .info-link {
+  color: #F8E061 !important;
+}
+
+[data-theme="dark"] .dropdown-menu .border-t .info-link:hover {
+  background-color: rgba(248, 224, 97, 0.15);
+}
+
+[data-theme="dark"] .dropdown-menu .border-t .info-text {
+  color: #F8E061 !important;
+}
+
+[data-theme="light"] .dropdown-menu .border-t .info-link {
+  color: #000000 !important;
+}
+
+[data-theme="light"] .dropdown-menu .border-t .info-link:hover {
+  background-color: rgba(255, 230, 0, 0.15);
+}
+
+[data-theme="light"] .dropdown-menu .border-t .info-text {
+  color: #000000 !important;
+}
+
+/* Mode sombre */
+[data-theme="dark"] .dropdown-menu .border-t .dropdown-link {
+  color: #F8E061 !important;
+}
+
+[data-theme="dark"] .dropdown-menu .border-t .dropdown-link:hover {
+  background-color: rgba(248, 224, 97, 0.15);
+  color: #F8E061 !important;
+  border-color: #F8E061 !important;
+}
+
+/* Mode clair */
+[data-theme="light"] .dropdown-menu .border-t .dropdown-link {
+  color: #000000 !important;
+}
+
+[data-theme="light"] .dropdown-menu .border-t .dropdown-link:hover {
+  background-color: rgba(255, 230, 0, 0.15);
+  color: #000000 !important;
+  border-color: #FFE600 !important;
+}
+
+/* Suppression des autres effets de survol pour ces boutons spécifiques */
+.dropdown-menu .border-t .dropdown-link:hover * {
+  color: inherit !important;
+}
+
+.dropdown-menu .border-t .dropdown-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .dropdown-menu .border-t .dropdown-link:hover {
+  background-color: rgba(248, 224, 97, 0.15);
+  color: #F8E061 !important;
+}
+
+[data-theme="light"] .dropdown-menu .border-t .dropdown-link:hover {
+  background-color: rgba(255, 230, 0, 0.15);
+  color: #000000 !important;
+}
+
+.dropdown-menu .border-t h3 {
+  margin-bottom: 0.5rem;
 }

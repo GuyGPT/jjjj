@@ -231,12 +231,12 @@ const Navbar = () => {
                     Informations Pratiques
                   </h3>
                   <div className="mt-1 space-y-1">
-                    <NavLink href="#calendar" isDropdown className="w-full flex items-center">
-                      <span className="text-left flex-1">Calendrier des Sessions</span>
-                    </NavLink>
-                    <NavLink href="https://wa.me/your-number" isDropdown className="w-full flex items-center">
-                      <span className="text-left flex-1">Inscription aux Ateliers (WhatsApp)</span>
-                    </NavLink>
+                    <a href="#calendar" className="block w-full text-center px-4 py-3 rounded-md border transition-all info-button">
+                      Calendrier des Sessions
+                    </a>
+                    <a href="https://wa.me/your-number" className="block w-full text-center px-4 py-3 rounded-md border transition-all info-button">
+                      Inscription aux Ateliers (WhatsApp)
+                    </a>
                   </div>
                 </div>
               </div>
