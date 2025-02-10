@@ -299,8 +299,8 @@ const Navbar = () => {
                     Conférences et Webinaires
                   </h3>
                   <div className="mt-1 space-y-1">
-                    <a href="#conferences" className="block w-full text-center px-4 py-3 rounded-md border transition-all info-button">
-                      Voir le Programme
+                    <a href="https://wa.me/your-number" className="block w-full text-center px-4 py-3 rounded-md border transition-all info-button">
+                      Inscription aux Ateliers (WhatsApp)
                     </a>
                   </div>
                 </div>
