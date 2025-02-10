@@ -308,6 +308,165 @@ iframe {
   border-right: 4px solid var(--primary);
 }
 
+.dropdown-menu .dropdown-link {
+  padding: 0.5rem 1rem;
+  margin: 0.25rem 0;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Styles spécifiques pour le dropdown Formation */
+.formation-dropdown {
+  min-width: 400px;
+}
+
+.formation-dropdown .pl-6 {
+  border-left: 2px solid var(--primary);
+  margin-left: 1rem;
+  padding-left: 1rem;
+}
+
+.formation-dropdown h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.formation-dropdown .space-y-1 > * + * {
+  margin-top: 0.5rem;
+}
+
+[data-theme="dark"] .formation-dropdown .text-gray-500 {
+  color: #a0aec0;
+}
+
+[data-theme="light"] .formation-dropdown .text-gray-500 {
+  color: #4a5568;
+}
+
+/* Animation pour les liens du menu formation */
+.formation-dropdown .dropdown-link {
+  position: relative;
+  padding-left: 1.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.formation-dropdown .dropdown-link:hover {
+  transform: translateX(0.5rem);
+}
+
+.formation-dropdown {
+  min-width: 400px;
+}
+
+/* Styles des onglets du menu formation */
+.formation-dropdown .border-b-2 {
+  border-color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.formation-dropdown button {
+  position: relative;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.formation-dropdown button::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.formation-dropdown button:hover::after {
+  transform: scaleX(1);
+}
+
+.formation-dropdown button.active {
+  color: var(--primary);
+}
+
+/* Style des sections */
+.formation-dropdown .mb-4 {
+  position: relative;
+  padding-left: 1rem;
+  border-left: 2px solid var(--primary);
+  margin-left: 0.5rem;
+}
+
+.formation-dropdown .space-y-1 {
+  margin-top: 0.75rem;
+}
+
+/* Style des liens */
+.formation-dropdown .dropdown-link {
+  padding: 0.5rem 1rem;
+  margin: 0.25rem 0;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.formation-dropdown .dropdown-link:hover {
+  background-color: var(--primary);
+  color: var(--dark) !important;
+}
+
+/* Bordure du bas */
+.formation-dropdown .border-t {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+}
+
+.formation-dropdown button {
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.formation-dropdown button:hover {
+  color: var(--primary);
+}
+
+.formation-dropdown .border-b {
+  border-color: var(--primary);
+}
+
+[data-theme="dark"] .formation-dropdown {
+  background-color: black;
+}
+
+[data-theme="dark"] .formation-dropdown button {
+  color: #F8E061;
+}
+
+[data-theme="dark"] .formation-dropdown button:hover {
+  color: white;
+}
+
+[data-theme="light"] .formation-dropdown {
+  background-color: white;
+}
+
+[data-theme="light"] .formation-dropdown button {
+  color: black;
+}
+
+[data-theme="light"] .formation-dropdown button:hover {
+  color: #FFE600;
+}
+
 [data-theme="dark"] .dropdown-button.active {
   border-color: #FFFFFF !important;
   border-width: 2px !important;
@@ -351,7 +510,7 @@ iframe {
 @keyframes slideInDesktop {
   0% {
     opacity: 0;
-    transform: translateY(5px) scale(0.98);
+    transform: translateY(2px) scale(0.98);
   }
   100% {
     opacity: 1;
@@ -533,4 +692,70 @@ iframe {
   .dropdown-menu .nav-link:hover {
     transform: translateX(0);
   }
+}
+
+/* Styles des badges de formation */
+.formation-badge {
+  font-size: 0.6rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 45px;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+[data-theme="dark"] .formation-badge {
+  background-color: rgba(248, 224, 97, 0.08);
+  color: #F8E061;
+  border: 1px solid rgba(248, 224, 97, 0.15);
+}
+
+[data-theme="dark"] .formation-badge:hover {
+  background-color: rgba(248, 224, 97, 0.25);
+}
+
+[data-theme="light"] .formation-badge {
+  background-color: rgba(255, 230, 0, 0.08);
+  color: #000000;
+  border: 1px solid rgba(255, 230, 0, 0.2);
+}
+
+[data-theme="light"] .formation-badge:hover {
+  background-color: rgba(255, 230, 0, 0.25);
+}
+
+[data-theme="dark"] .dropdown-link:hover .formation-badge {
+  background-color: rgba(248, 224, 97, 0.2);
+  border-color: rgba(248, 224, 97, 0.3);
+}
+
+[data-theme="light"] .dropdown-link:hover .formation-badge {
+  background-color: rgba(255, 230, 0, 0.2);
+  border-color: rgba(255, 230, 0, 0.4);
+}
+
+.dropdown-link:hover .formation-badge {
+  transform: translateY(-1px);
+}
+
+/* Ajustement de l'espacement des badges */
+.dropdown-link .flex.gap-2.shrink-0 {
+  margin-left: auto;
+  gap: 0.35rem !important;
+}
+
+.dropdown-link .flex.gap-2 {
+  margin-left: auto;
+}
+
+/* Formation section links without badges */
+.dropdown-menu .border-t .nav-link {
+  padding-left: 0;
+  margin-left: 0;
 }

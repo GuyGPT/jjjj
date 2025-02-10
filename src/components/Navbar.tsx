@@ -149,7 +149,99 @@ const Navbar = () => {
                 </div>
               </div>
             </DropdownMenu>
-            <NavLink href="#formation">Formation</NavLink>
+
+            <DropdownMenu title="Formation" isOpen={openDropdown === 'Formation'} toggleDropdown={toggleDropdown}>
+              <div className="space-y-1 max-h-[60vh] overflow-y-auto">
+                {/* Formations en Informatique */}
+                <div className="px-4 py-2">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    <Monitor className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    Formations en Informatique
+                  </h3>
+                  <div className="mt-1 space-y-1">
+                    <NavLink href="#msoffice" isDropdown className="flex items-center justify-between gap-4">
+                      <span className="text-left">MS WORD • MS EXCEL • POWERPOINT</span>
+                      <span className="flex gap-2 shrink-0">
+                        <span className="formation-badge">En ligne</span>
+                        <span className="formation-badge">Présentiel</span>
+                      </span>
+                    </NavLink>
+                    <NavLink href="#ai" isDropdown className="flex items-center justify-between gap-4">
+                      <span className="text-left">INTELLIGENCE ARTIFICIELLE</span>
+                      <span className="flex gap-2 shrink-0">
+                        <span className="formation-badge">En ligne</span>
+                        <span className="formation-badge">Présentiel</span>
+                      </span>
+                    </NavLink>
+                  </div>
+                </div>
+
+                {/* Ateliers de Développement Personnel */}
+                <div className="px-4 py-2">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    Ateliers de Développement Personnel
+                  </h3>
+                  <div className="mt-1 space-y-1">
+                    <NavLink href="#time" isDropdown className="flex items-center justify-between gap-4">
+                      <span className="text-left">Gestion du Temps</span>
+                      <span className="flex gap-2 shrink-0">
+                        <span className="formation-badge">En ligne</span>
+                        <span className="formation-badge">Présentiel</span>
+                      </span>
+                    </NavLink>
+                    <NavLink href="#communication" isDropdown className="flex items-center justify-between gap-4">
+                      <span className="text-left">Communication Efficace</span>
+                      <span className="flex gap-2 shrink-0">
+                        <span className="formation-badge">En ligne</span>
+                        <span className="formation-badge">Présentiel</span>
+                      </span>
+                    </NavLink>
+                  </div>
+                </div>
+
+                {/* Intelligence Financière */}
+                <div className="px-4 py-2">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    <Briefcase className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    Intelligence Financière
+                  </h3>
+                  <div className="mt-1 space-y-1">
+                    <NavLink href="#budget" isDropdown className="flex items-center justify-between gap-4">
+                      <span className="text-left">Gestion de Budget</span>
+                      <span className="flex gap-2 shrink-0">
+                        <span className="formation-badge">En ligne</span>
+                        <span className="formation-badge">Présentiel</span>
+                      </span>
+                    </NavLink>
+                    <NavLink href="#investment" isDropdown className="flex items-center justify-between gap-4">
+                      <span className="text-left">Investissement et Épargne</span>
+                      <span className="flex gap-2 shrink-0">
+                        <span className="formation-badge">En ligne</span>
+                        <span className="formation-badge">Présentiel</span>
+                      </span>
+                    </NavLink>
+                  </div>
+                </div>
+
+                {/* Liens importants */}
+                <div className="px-4 py-2 border-t border-[var(--primary)]">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap mt-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    <BookOpen className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    Informations Pratiques
+                  </h3>
+                  <div className="mt-1 space-y-1">
+                    <NavLink href="#calendar" isDropdown className="w-full flex items-center">
+                      <span className="text-left flex-1">Calendrier des Sessions</span>
+                    </NavLink>
+                    <NavLink href="https://wa.me/your-number" isDropdown className="w-full flex items-center">
+                      <span className="text-left flex-1">Inscription aux Ateliers (WhatsApp)</span>
+                    </NavLink>
+                  </div>
+                </div>
+              </div>
+            </DropdownMenu>
+
             <NavLink href="#coaching">Coaching/Mentorat</NavLink>
             <NavLink href="#contact">Contact</NavLink>
             <NavLink href="#communaute">Communauté</NavLink>
@@ -351,8 +443,8 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 mt-4 w-auto rounded-lg shadow-2xl bg-white border border-black z-50 dropdown-menu transition-all duration-300 ease-in-out transform origin-top">
-          <div className="py-4 flex space-x-12">
+        <div className={`absolute left-0 mt-4 w-auto rounded-lg shadow-2xl bg-white border border-black z-50 dropdown-menu transition-all duration-300 ease-in-out transform origin-top ${title === 'Formation' ? 'min-w-[500px]' : ''}`}>
+          <div className={`py-4 ${title === 'Formation' ? 'px-4' : 'flex space-x-12'}`}>
             {children}
           </div>
         </div>
@@ -364,7 +456,9 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
 const NavLink = ({ href, children, isDropdown, className }: { href: string; children: React.ReactNode; isDropdown?: boolean; className?: string }) => (
   <a
     href={href}
-    className={`px-3 py-2 rounded-md text-sm font-medium border transition-colors ${isDropdown ? 'block w-full text-left dropdown-link' : ''} ${className || ''}`}
+    className={`px-3 py-2 rounded-md text-sm font-medium border transition-colors ${
+      isDropdown ? 'block w-full text-left dropdown-link hover:pl-4' : ''
+    } ${className || ''}`}
     style={{
       color: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
       borderColor: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
