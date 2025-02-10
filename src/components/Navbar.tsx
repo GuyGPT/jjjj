@@ -242,7 +242,71 @@ const Navbar = () => {
               </div>
             </DropdownMenu>
 
-            <NavLink href="#coaching">Coaching/Mentorat</NavLink>
+            <DropdownMenu title="Coaching/Mentorat" isOpen={openDropdown === 'Coaching/Mentorat'} toggleDropdown={toggleDropdown}>
+              <div className="space-y-1 max-h-[60vh] overflow-y-auto">
+                {/* Coaching Professionnel */}
+                <div className="px-4 py-2">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    <Briefcase className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    Coaching Professionnel
+                  </h3>
+                  <div className="mt-1 space-y-1">
+                    <NavLink href="#developpement-carriere" isDropdown>
+                      <span className="text-left">Développement de Carrière</span>
+                    </NavLink>
+                    <NavLink href="#leadership" isDropdown>
+                      <span className="text-left">Leadership et Management</span>
+                    </NavLink>
+                  </div>
+                </div>
+
+                {/* Mentorat Personnalisé */}
+                <div className="px-4 py-2">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    Mentorat Personnalisé
+                  </h3>
+                  <div className="mt-1 space-y-1">
+                    <NavLink href="#objectifs-vie" isDropdown>
+                      <span className="text-left">Objectifs de Vie</span>
+                    </NavLink>
+                    <NavLink href="#gestion-stress" isDropdown>
+                      <span className="text-left">Gestion du Stress</span>
+                    </NavLink>
+                  </div>
+                </div>
+
+                {/* Programmes de Mentorat */}
+                <div className="px-4 py-2">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    <BookOpen className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    Programmes de Mentorat
+                  </h3>
+                  <div className="mt-1 space-y-1">
+                    <NavLink href="#mentorat-entrepreneurs" isDropdown>
+                      <span className="text-left">Mentorat pour Entrepreneurs</span>
+                    </NavLink>
+                    <NavLink href="#mentorat-etudiants" isDropdown>
+                      <span className="text-left">Mentorat pour Étudiants</span>
+                    </NavLink>
+                  </div>
+                </div>
+
+                {/* Conférences et Webinaires */}
+                <div className="px-4 py-2 border-t border-[var(--primary)]">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap mt-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    <Monitor className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    Conférences et Webinaires
+                  </h3>
+                  <div className="mt-1 space-y-1">
+                    <a href="#conferences" className="block w-full text-center px-4 py-3 rounded-md border transition-all info-button">
+                      Voir le Programme
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </DropdownMenu>
+
             <NavLink href="#contact">Contact</NavLink>
             <NavLink href="#communaute">Communauté</NavLink>
             <button
@@ -284,7 +348,7 @@ const Navbar = () => {
             <MobileNavLink href="#formation" onClick={() => setIsMenuOpen(false)}>
               Formation
             </MobileNavLink>
-            <MobileNavLink href="#coaching" onClick={() => setIsMenuOpen(false)}>
+            <MobileNavLink href="#coaching-mentorat" onClick={() => setIsMenuOpen(false)}>
               Coaching/Mentorat
             </MobileNavLink>
             <MobileNavLink href="#contact" onClick={() => setIsMenuOpen(false)}>
@@ -443,8 +507,11 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
       </button>
 
       {isOpen && (
-        <div className={`absolute left-0 mt-4 w-auto rounded-lg shadow-2xl bg-white border border-black z-50 dropdown-menu transition-all duration-300 ease-in-out transform origin-top ${title === 'Formation' ? 'min-w-[500px]' : ''}`}>
-          <div className={`py-4 ${title === 'Formation' ? 'px-4' : 'flex space-x-12'}`}>
+        <div className={`absolute left-0 mt-4 w-auto rounded-lg shadow-2xl bg-white border border-black z-50 dropdown-menu transition-all duration-300 ease-in-out transform origin-top ${
+          title === 'Formation' ? 'min-w-[500px]' : 
+          title === 'Coaching/Mentorat' ? 'min-w-[400px]' : ''
+        }`}>
+          <div className={`py-4 ${title === 'Formation' || title === 'Coaching/Mentorat' ? 'px-4' : 'flex space-x-12'}`}>
             {children}
           </div>
         </div>
