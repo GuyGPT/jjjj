@@ -848,6 +848,31 @@ chatbot-button {
   border-color: #FFE600 !important;
 }
 
+/* Suppression de la surbrillance blanche des boutons au survol */
+[data-theme="dark"] .menu button:hover,
+[data-theme="dark"] .menu a:hover,
+[data-theme="dark"] .theme-toggle:hover,
+[data-theme="dark"] .chatbot-button:hover,
+[data-theme="dark"] .dropdown-menu a:hover,
+[data-theme="dark"] .dropdown-link:hover,
+[data-theme="dark"] .info-button:hover {
+  background-color: transparent !important;
+  color: #F8E061 !important;
+  border-color: #F8E061 !important;
+}
+
+[data-theme="light"] .menu button:hover,
+[data-theme="light"] .menu a:hover,
+[data-theme="light"] .theme-toggle:hover,
+[data-theme="light"] .chatbot-button:hover,
+[data-theme="light"] .dropdown-menu a:hover,
+[data-theme="light"] .dropdown-link:hover,
+[data-theme="light"] .info-button:hover {
+  background-color: transparent !important;
+  color: #000000 !important;
+  border-color: #FFE600 !important;
+}
+
 /* Suppression des autres effets de survol pour ces boutons spécifiques */
 .dropdown-menu .border-t .dropdown-link:hover * {
   color: inherit !important;
