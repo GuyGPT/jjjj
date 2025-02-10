@@ -292,32 +292,37 @@ iframe {
 
 /* Dropdown Menu Styles */
 .dropdown-menu {
-  min-width: 250px; /* Adjusted minimum width */
-  max-width: none; /* Removed maximum width restriction */
-  width: fit-content; /* Adjust width to fit content */
+  min-width: 250px;
+  width: fit-content;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align items */
-  /* background-color: white;  Ensure background color */
-  /* border: 1px solid black;  Add border */
-  border-radius: 0.25rem; /* Add border radius */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
-  padding: 0.5rem; /* Add padding for better spacing */
-  margin: 0 auto; /* Center the dropdown menu */
-  border-left: 4px solid var(--primary); /* Ajout d'une bordure gauche */
-  border-right: 4px solid var(--primary); /* Ajout d'une bordure droite */
+  align-items: center;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin: 0 auto;
+  border-left: 4px solid var(--primary);
+  border-right: 4px solid var(--primary);
 }
 
 /* Styles spécifiques pour le mode desktop responsive */
 @media (min-width: 768px) {
   .dropdown-menu {
-    border-left: 4px solid var(--primary); /* Bordure gauche */
-    border-right: 4px solid var(--primary); /* Bordure droite */
-    top: 100%; /* Positionnement correct du dropdown */
-    transform-origin: top center; /* Origine de la transformation */
-    animation: slideInDesktop 0.3s ease-in-out forwards; /* Animation plus rapide et direction */
-    display: flex; /* Ajout de flex pour l'affichage latéral */
-    flex-direction: row; /* Disposition en ligne */
+    border-left: 4px solid var(--primary);
+    border-right: 4px solid var(--primary);
+    top: calc(100% + 1rem);
+    transform-origin: top center;
+    animation: slideInDesktop 0.3s ease-in-out forwards;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .dropdown-menu .px-4.py-2 {
+    margin-bottom: 1rem;
+  }
+  
+  .dropdown-menu .mt-1.space-y-1 > * {
+    margin-bottom: 0.75rem;
   }
 }
 

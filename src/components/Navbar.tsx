@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun, Wrench, Monitor, Briefcase, Leaf, BookOpen, Users, Eye } from 'lucide-react';
+import { Menu, X, Moon, Sun, Wrench, Monitor, Briefcase, Leaf, BookOpen, Users } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,11 +28,6 @@ const Navbar = () => {
     setIsServicesMenuOpen(!isServicesMenuOpen);
   };
 
-  const openImageGallery = (imageName: string) => {
-    // Implement your image gallery logic here. This is a placeholder.
-    alert(`Opening gallery for ${imageName}`);
-  };
-
   return (
     <nav className="bg-[#040504]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,17 +53,14 @@ const Navbar = () => {
                     Maintenance Professionnelle
                   </h3>
                   <div className="mt-1 space-y-1">
-                    <NavLink href="#maintenance-packs" isDropdown className="flex justify-between items-center">
+                    <NavLink href="#maintenance-packs" isDropdown>
                       <span className="text-left">Packs de Maintenance</span>
-                      <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("maintenance-packs.jpg")} />
                     </NavLink>
-                    <NavLink href="#maintenance-electrique" isDropdown className="flex justify-between items-center">
+                    <NavLink href="#maintenance-electrique" isDropdown>
                       <span className="text-left">Maintenance Électrique</span>
-                      <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("maintenance-electrique.jpg")} />
                     </NavLink>
-                    <NavLink href="#maintenance-froid" isDropdown className="flex justify-between items-center">
+                    <NavLink href="#maintenance-froid" isDropdown>
                       <span className="text-left">Maintenance Froid et Climatisation</span>
-                      <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("maintenance-froid.jpg")} />
                     </NavLink>
                   </div>
                 </div>
@@ -80,17 +72,14 @@ const Navbar = () => {
                     Services Numériques
                   </h3>
                   <div className="mt-1 space-y-1">
-                    <NavLink href="#developpement-web" isDropdown className="flex justify-between items-center">
+                    <NavLink href="#developpement-web" isDropdown>
                       <span className="text-left">Développement de Sites Web</span>
-                      <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("developpement-web.jpg")} />
                     </NavLink>
-                    <NavLink href="#maintenance-informatique" isDropdown className="flex justify-between items-center">
+                    <NavLink href="#maintenance-informatique" isDropdown>
                       <span className="text-left">Maintenance Informatique</span>
-                      <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("maintenance-informatique.jpg")} />
                     </NavLink>
-                    <NavLink href="#transformation-digitale" isDropdown className="flex justify-between items-center">
+                    <NavLink href="#transformation-digitale" isDropdown>
                       <span className="text-left">Consultance en Transformation Digitale</span>
-                      <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("transformation-digitale.jpg")} />
                     </NavLink>
                   </div>
                 </div>
@@ -102,13 +91,11 @@ const Navbar = () => {
                     Services d'Affaires
                   </h3>
                   <div className="mt-1 space-y-1">
-                    <NavLink href="#secretariat-public" isDropdown className="flex justify-between items-center">
+                    <NavLink href="#secretariat-public" isDropdown>
                       <span className="text-left">Secrétariat Public</span>
-                      <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("secretariat-public.jpg")} />
                     </NavLink>
-                    <NavLink href="#librairie-bureautique" isDropdown className="flex justify-between items-center">
+                    <NavLink href="#librairie-bureautique" isDropdown>
                       <span className="text-left">Librairie et Consommables Bureautiques</span>
-                      <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("librairie-bureautique.jpg")} />
                     </NavLink>
                   </div>
                 </div>
@@ -120,13 +107,11 @@ const Navbar = () => {
                     Énergie et Environnement
                   </h3>
                   <div className="mt-1 space-y-1">
-                    <NavLink href="#solutions-energetiques" isDropdown className="flex justify-between items-center">
+                    <NavLink href="#solutions-energetiques" isDropdown>
                       <span className="text-left">Solutions Énergétiques</span>
-                      <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("solutions-energetiques.jpg")} />
                     </NavLink>
-                    <NavLink href="#controle-technique" isDropdown className="flex justify-between items-center">
+                    <NavLink href="#controle-technique" isDropdown>
                       <span className="text-left">Suivi et Contrôle Technique</span>
-                      <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("controle-technique.jpg")} />
                     </NavLink>
                   </div>
                 </div>
@@ -138,13 +123,11 @@ const Navbar = () => {
                     Formations Professionnelles
                   </h3>
                   <div className="mt-1 space-y-1">
-                    <NavLink href="#formation-informatique" isDropdown className="flex justify-between items-center">
+                    <NavLink href="#formation-informatique" isDropdown>
                       <span className="text-left">Informatique et Bureautique</span>
-                      <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("formation-informatique.jpg")} />
                     </NavLink>
-                    <NavLink href="#formation-developpement-personnel" isDropdown className="flex justify-between items-center">
+                    <NavLink href="#formation-developpement-personnel" isDropdown>
                       <span className="text-left">Développement Personnel</span>
-                      <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("formation-developpement-personnel.jpg")} />
                     </NavLink>
                   </div>
                 </div>
@@ -156,13 +139,11 @@ const Navbar = () => {
                     Consultance et Accompagnement
                   </h3>
                   <div className="mt-1 space-y-1">
-                    <NavLink href="#intelligence-financiere" isDropdown className="flex justify-between items-center">
+                    <NavLink href="#intelligence-financiere" isDropdown>
                       <span className="text-left">Intelligence Financière</span>
-                      <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("intelligence-financiere.jpg")} />
                     </NavLink>
-                    <NavLink href="#developpement-innovation" isDropdown className="flex justify-between items-center">
+                    <NavLink href="#developpement-innovation" isDropdown>
                       <span className="text-left">Développement Personnel et Innovation</span>
-                      <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("developpement-innovation.jpg")} />
                     </NavLink>
                   </div>
                 </div>
@@ -256,17 +237,14 @@ const Navbar = () => {
               <Wrench className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
               Maintenance Professionnelle
             </h3>
-            <MobileNavLink href="#maintenance-packs" onClick={toggleServicesMenu} isDropdown className="flex justify-between items-center">
+            <MobileNavLink href="#maintenance-packs" onClick={toggleServicesMenu} isDropdown>
               <span className="text-left">Packs de Maintenance</span>
-              <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("maintenance-packs.jpg")} />
             </MobileNavLink>
-            <MobileNavLink href="#maintenance-electrique" onClick={toggleServicesMenu} isDropdown className="flex justify-between items-center">
+            <MobileNavLink href="#maintenance-electrique" onClick={toggleServicesMenu} isDropdown>
               <span className="text-left">Maintenance Électrique</span>
-              <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("maintenance-electrique.jpg")} />
             </MobileNavLink>
-            <MobileNavLink href="#maintenance-froid" onClick={toggleServicesMenu} isDropdown className="flex justify-between items-center">
+            <MobileNavLink href="#maintenance-froid" onClick={toggleServicesMenu} isDropdown>
               <span className="text-left">Maintenance Froid et Climatisation</span>
-              <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("maintenance-froid.jpg")} />
             </MobileNavLink>
           </div>
 
@@ -276,17 +254,14 @@ const Navbar = () => {
               <Monitor className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
               Services Numériques
             </h3>
-            <MobileNavLink href="#developpement-web" onClick={toggleServicesMenu} isDropdown className="flex justify-between items-center">
+            <MobileNavLink href="#developpement-web" onClick={toggleServicesMenu} isDropdown>
               <span className="text-left">Développement de Sites Web</span>
-              <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("developpement-web.jpg")} />
             </MobileNavLink>
-            <MobileNavLink href="#maintenance-informatique" onClick={toggleServicesMenu} isDropdown className="flex justify-between items-center">
+            <MobileNavLink href="#maintenance-informatique" onClick={toggleServicesMenu} isDropdown>
               <span className="text-left">Maintenance Informatique</span>
-              <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("maintenance-informatique.jpg")} />
             </MobileNavLink>
-            <MobileNavLink href="#transformation-digitale" onClick={toggleServicesMenu} isDropdown className="flex justify-between items-center">
+            <MobileNavLink href="#transformation-digitale" onClick={toggleServicesMenu} isDropdown>
               <span className="text-left">Consultance en Transformation Digitale</span>
-              <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("transformation-digitale.jpg")} />
             </MobileNavLink>
           </div>
 
@@ -296,13 +271,11 @@ const Navbar = () => {
               <Briefcase className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
               Services d'Affaires
             </h3>
-            <MobileNavLink href="#secretariat-public" onClick={toggleServicesMenu} isDropdown className="flex justify-between items-center">
+            <MobileNavLink href="#secretariat-public" onClick={toggleServicesMenu} isDropdown>
               <span className="text-left">Secrétariat Public</span>
-              <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("secretariat-public.jpg")} />
             </MobileNavLink>
-            <MobileNavLink href="#librairie-bureautique" onClick={toggleServicesMenu} isDropdown className="flex justify-between items-center">
+            <MobileNavLink href="#librairie-bureautique" onClick={toggleServicesMenu} isDropdown>
               <span className="text-left">Librairie et Consommables Bureautiques</span>
-              <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("librairie-bureautique.jpg")} />
             </MobileNavLink>
           </div>
 
@@ -312,13 +285,11 @@ const Navbar = () => {
               <Leaf className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
               Énergie et Environnement
             </h3>
-            <MobileNavLink href="#solutions-energetiques" onClick={toggleServicesMenu} isDropdown className="flex justify-between items-center">
+            <MobileNavLink href="#solutions-energetiques" onClick={toggleServicesMenu} isDropdown>
               <span className="text-left">Solutions Énergétiques</span>
-              <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("solutions-energetiques.jpg")} />
             </MobileNavLink>
-            <MobileNavLink href="#controle-technique" onClick={toggleServicesMenu} isDropdown className="flex justify-between items-center">
+            <MobileNavLink href="#controle-technique" onClick={toggleServicesMenu} isDropdown>
               <span className="text-left">Suivi et Contrôle Technique</span>
-              <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("controle-technique.jpg")} />
             </MobileNavLink>
           </div>
 
@@ -328,13 +299,11 @@ const Navbar = () => {
               <BookOpen className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
               Formations Professionnelles
             </h3>
-            <MobileNavLink href="#formation-informatique" onClick={toggleServicesMenu} isDropdown className="flex justify-between items-center">
+            <MobileNavLink href="#formation-informatique" onClick={toggleServicesMenu} isDropdown>
               <span className="text-left">Informatique et Bureautique</span>
-              <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("formation-informatique.jpg")} />
             </MobileNavLink>
-            <MobileNavLink href="#formation-developpement-personnel" onClick={toggleServicesMenu} isDropdown className="flex justify-between items-center">
+            <MobileNavLink href="#formation-developpement-personnel" onClick={toggleServicesMenu} isDropdown>
               <span className="text-left">Développement Personnel</span>
-              <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("formation-developpement-personnel.jpg")} />
             </MobileNavLink>
           </div>
 
@@ -344,13 +313,11 @@ const Navbar = () => {
               <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
               Consultance et Accompagnement
             </h3>
-            <MobileNavLink href="#intelligence-financiere" onClick={toggleServicesMenu} isDropdown className="flex justify-between items-center">
+            <MobileNavLink href="#intelligence-financiere" onClick={toggleServicesMenu} isDropdown>
               <span className="text-left">Intelligence Financière</span>
-              <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("intelligence-financiere.jpg")} />
             </MobileNavLink>
-            <MobileNavLink href="#developpement-innovation" onClick={toggleServicesMenu} isDropdown className="flex justify-between items-center">
+            <MobileNavLink href="#developpement-innovation" onClick={toggleServicesMenu} isDropdown>
               <span className="text-left">Développement Personnel et Innovation</span>
-              <Eye className="cursor-pointer ml-2" onClick={() => openImageGallery("developpement-innovation.jpg")} />
             </MobileNavLink>
           </div>
         </div>
@@ -382,8 +349,8 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 mt-2 w-auto rounded-md shadow-lg bg-white border border-black z-50 dropdown-menu">
-          <div className="py-1 flex"> {/* Utilisation de flex pour l'affichage latéral */}
+        <div className="absolute left-0 mt-16 w-auto rounded-md shadow-xl bg-white border border-black z-50 dropdown-menu transition-all duration-200 ease-in-out opacity-100 transform translate-y-0">
+          <div className="py-6 flex space-x-8">
             {children}
           </div>
         </div>
@@ -395,7 +362,7 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
 const NavLink = ({ href, children, isDropdown, className }: { href: string; children: React.ReactNode; isDropdown?: boolean; className?: string }) => (
   <a
     href={href}
-    className={`px-3 py-2 rounded-md text-sm font-medium border transition-colors ${isDropdown ? 'block w-full text-left dropdown-link' : ''} ${className || ''}`}
+    className={`px-3 py-3 rounded-md text-sm font-medium border transition-colors ${isDropdown ? 'block w-full text-left dropdown-link mb-2' : ''} ${className || ''}`}
     style={{
       color: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
       borderColor: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
