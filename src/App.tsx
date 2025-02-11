@@ -27,11 +27,11 @@ function App() {
   };
 
   return (
-    <div className="bg-[var(--dark)] text-[var(--light)]">
+    <div className="bg-[#040504] text-[var(--light)] min-h-screen w-full overflow-x-hidden">
       <Navbar />
       <Hero />
       
-      <div className="splash-text-container text-center my-4"> {/* Reduced margin */}
+      <div className="splash-text-container text-center my-4 bg-[#040504]">
         <h2 className="text-[var(--primary)] text-4xl font-bold">
           BON PLAN
         </h2>

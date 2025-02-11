@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun, Wrench, Monitor, Briefcase, Leaf, BookOpen, Users } from 'lucide-react';
+import { 
+  Menu, X, Moon, Sun, 
+  Wrench, Laptop, Brain, PiggyBank, ClipboardList,
+  Monitor, Briefcase, Users, BookOpen,
+  Settings, Tool, Wind, Globe,
+  Code, Database, Lightbulb, Building,
+  FileText, Printer, Cloud, BarChart
+} from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,7 +61,7 @@ const Navbar = () => {
                 {/* Maintenance Professionnelle */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Wrench className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Settings className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Maintenance Professionnelle
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -73,7 +80,7 @@ const Navbar = () => {
                 {/* Services Numériques */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Monitor className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Code className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Services Numériques
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -92,7 +99,7 @@ const Navbar = () => {
                 {/* Services d'Affaires */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Briefcase className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Building className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Services d'Affaires
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -108,7 +115,7 @@ const Navbar = () => {
                 {/* Énergie et Environnement */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Leaf className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Globe className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Énergie et Environnement
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -140,7 +147,7 @@ const Navbar = () => {
                 {/* Consultance et Accompagnement */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Lightbulb className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Consultance et Accompagnement
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -159,15 +166,15 @@ const Navbar = () => {
                 {/* Formations en Informatique */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Monitor className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Laptop className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Formations en Informatique
                   </h3>
                   <div className="mt-1 space-y-1">
                     <NavLink href="#bureautique" isDropdown>
-                      <span className="text-left">Bureautique : MS Word, Excel, PowerPoint</span>
+                      <span className="text-center block w-full">Bureautique : MS Word, Excel, PowerPoint</span>
                     </NavLink>
                     <NavLink href="#ia" isDropdown>
-                      <span className="text-left">Intelligence Artificielle</span>
+                      <span className="text-center block w-full">Intelligence Artificielle</span>
                     </NavLink>
                   </div>
                 </div>
@@ -175,15 +182,15 @@ const Navbar = () => {
                 {/* Ateliers de Développement Personnel */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Brain className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Ateliers de Développement Personnel
                   </h3>
                   <div className="mt-1 space-y-1">
                     <NavLink href="#gestion-temps" isDropdown>
-                      <span className="text-left">Gestion du Temps</span>
+                      <span className="text-center block w-full">Gestion du Temps</span>
                     </NavLink>
                     <NavLink href="#communication" isDropdown>
-                      <span className="text-left">Communication Efficace</span>
+                      <span className="text-center block w-full">Communication Efficace</span>
                     </NavLink>
                   </div>
                 </div>
@@ -191,15 +198,15 @@ const Navbar = () => {
                 {/* Intelligence Financière */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Briefcase className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <PiggyBank className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Intelligence Financière
                   </h3>
                   <div className="mt-1 space-y-1">
                     <NavLink href="#gestion-budget" isDropdown>
-                      <span className="text-left">Gestion de Budget</span>
+                      <span className="text-center block w-full">Gestion de Budget</span>
                     </NavLink>
                     <NavLink href="#investissement" isDropdown>
-                      <span className="text-left">Investissement et Épargne</span>
+                      <span className="text-center block w-full">Investissement et Épargne</span>
                     </NavLink>
                   </div>
                 </div>
@@ -207,23 +214,23 @@ const Navbar = () => {
                 {/* Calendrier et Inscription */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap mb-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    <ClipboardList className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Autres Informations
                   </h3>
                   <div className="mt-1 space-y-1">
                     <NavLink href="#calendrier" isDropdown>
-                      <span className="text-left">Calendrier des Sessions</span>
+                      <span className="text-center block w-full">Calendrier des Sessions</span>
                     </NavLink>
                     <NavLink href="#inscription" isDropdown>
-                      <span className="text-left">Inscription aux Ateliers</span>
+                      <span className="text-center block w-full">Inscription aux Ateliers</span>
                     </NavLink>
                   </div>
                 </div>
               </div>
             </DropdownMenu>
-            <NavLink href="#formation">Formation</NavLink>
             <NavLink href="#coaching">Coaching/Mentorat</NavLink>
-            <NavLink href="#contact">Contact</NavLink>
             <NavLink href="#communaute">Communauté</NavLink>
+            <NavLink href="#contact">Contact</NavLink>
             <button
               onClick={toggleTheme}
               className="inline-flex items-center justify-center p-2 rounded-md border transition-colors"
@@ -266,14 +273,11 @@ const Navbar = () => {
             <MobileNavLink href="#coaching" onClick={() => setIsMenuOpen(false)}>
               Coaching/Mentorat
             </MobileNavLink>
-            <MobileNavLink href="#contact" onClick={() => setIsMenuOpen(false)}>
-              Contact
-            </MobileNavLink>
             <MobileNavLink href="#communaute" onClick={() => setIsMenuOpen(false)}>
               Communauté
             </MobileNavLink>
-            <MobileNavLink href="#about" onClick={() => setIsMenuOpen(false)}>
-              À propos
+            <MobileNavLink href="#contact" onClick={() => setIsMenuOpen(false)}>
+              Contact
             </MobileNavLink>
             <button
               onClick={toggleTheme}
@@ -305,7 +309,7 @@ const Navbar = () => {
           {/* Maintenance Professionnelle */}
           <div className="mb-2">
             <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-              <Wrench className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+              <Settings className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
               Maintenance Professionnelle
             </h3>
             <MobileNavLink href="#maintenance-packs" onClick={toggleServicesMenu} isDropdown>
@@ -322,7 +326,7 @@ const Navbar = () => {
           {/* Services Numériques */}
           <div className="mb-2">
             <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-              <Monitor className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+              <Code className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
               Services Numériques
             </h3>
             <MobileNavLink href="#developpement-web" onClick={toggleServicesMenu} isDropdown>
@@ -339,7 +343,7 @@ const Navbar = () => {
           {/* Services d'Affaires */}
           <div className="mb-2">
             <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-              <Briefcase className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+              <Building className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
               Services d'Affaires
             </h3>
             <MobileNavLink href="#secretariat-public" onClick={toggleServicesMenu} isDropdown>
@@ -353,7 +357,7 @@ const Navbar = () => {
           {/* Énergie et Environnement */}
           <div className="mb-2">
             <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-              <Leaf className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+              <Globe className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
               Énergie et Environnement
             </h3>
             <MobileNavLink href="#solutions-energetiques" onClick={toggleServicesMenu} isDropdown>
@@ -381,7 +385,7 @@ const Navbar = () => {
           {/* Consultance et Accompagnement */}
           <div className="mb-2">
             <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-              <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+              <Lightbulb className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
               Consultance et Accompagnement
             </h3>
             <MobileNavLink href="#intelligence-financiere" onClick={toggleServicesMenu} isDropdown>
@@ -408,56 +412,57 @@ const Navbar = () => {
           {/* Formations en Informatique */}
           <div className="mb-2">
             <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-              <Monitor className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+              <Laptop className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
               Formations en Informatique
             </h3>
             <MobileNavLink href="#bureautique" onClick={toggleFormationMenu} isDropdown>
-              <span className="text-left">Bureautique : MS Word, Excel, PowerPoint</span>
+              <span className="text-center block w-full">Bureautique : MS Word, Excel, PowerPoint</span>
             </MobileNavLink>
             <MobileNavLink href="#ia" onClick={toggleFormationMenu} isDropdown>
-              <span className="text-left">Intelligence Artificielle</span>
+              <span className="text-center block w-full">Intelligence Artificielle</span>
             </MobileNavLink>
           </div>
 
           {/* Ateliers de Développement Personnel */}
           <div className="mb-2">
             <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-              <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+              <Brain className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
               Ateliers de Développement Personnel
             </h3>
             <MobileNavLink href="#gestion-temps" onClick={toggleFormationMenu} isDropdown>
-              <span className="text-left">Gestion du Temps</span>
+              <span className="text-center block w-full">Gestion du Temps</span>
             </MobileNavLink>
             <MobileNavLink href="#communication" onClick={toggleFormationMenu} isDropdown>
-              <span className="text-left">Communication Efficace</span>
+              <span className="text-center block w-full">Communication Efficace</span>
             </MobileNavLink>
           </div>
 
           {/* Intelligence Financière */}
           <div className="mb-2">
             <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-              <Briefcase className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+              <PiggyBank className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
               Intelligence Financière
             </h3>
             <MobileNavLink href="#gestion-budget" onClick={toggleFormationMenu} isDropdown>
-              <span className="text-left">Gestion de Budget</span>
+              <span className="text-center block w-full">Gestion de Budget</span>
             </MobileNavLink>
             <MobileNavLink href="#investissement" onClick={toggleFormationMenu} isDropdown>
-              <span className="text-left">Investissement et Épargne</span>
+              <span className="text-center block w-full">Investissement et Épargne</span>
             </MobileNavLink>
           </div>
 
           {/* Calendrier et Inscription */}
           <div className="mb-2">
             <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap mb-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+              <ClipboardList className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
               Autres Informations
             </h3>
-            <div className="flex flex-col space-y-6">
+            <div className="mt-1 space-y-1">
               <MobileNavLink href="#calendrier" onClick={toggleFormationMenu} isDropdown>
-                <span className="text-left">Calendrier des Sessions</span>
+                <span className="text-center block w-full">Calendrier des Sessions</span>
               </MobileNavLink>
               <MobileNavLink href="#inscription" onClick={toggleFormationMenu} isDropdown>
-                <span className="text-left">Inscription aux Ateliers</span>
+                <span className="text-center block w-full">Inscription aux Ateliers</span>
               </MobileNavLink>
             </div>
           </div>
@@ -480,6 +485,7 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
       <button
         onClick={() => toggleDropdown(title)}
         className="px-3 py-2 rounded-md text-sm font-medium border transition-colors flex items-center gap-1 dropdown-button"
+        aria-expanded={isOpen}
         style={{
           color: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
           borderColor: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',

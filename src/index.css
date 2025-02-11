@@ -2,11 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #040504;
+}
+
+body {
+  background-color: #040504 !important;
+  min-height: 100vh;
+}
+
+.bg-[#040504] {
+  background-color: #040504 !important;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: #040504;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --primary: #FFE600;
   --secondary: #475569;
   --accent: #FFE600;
-  --dark: #1a1a1a;
+  --dark: #040504;
   --light: #f8fafc;
   --text-dark: #1a1a1a;
   --text-light: #f8fafc;
@@ -16,7 +41,7 @@
   --primary: #000000; /* Black for primary */
   --secondary: #4a5568;
   --accent: #000000;
-  --dark: #ffffff; /* White for dark */
+  --dark: #040504;
   --light: #1a1a1a;
   --text-dark: #000000; /* Black for text */
   --text-light: #f8fafc;
@@ -347,22 +372,26 @@ iframe {
   white-space: nowrap; /* Prevent text from wrapping */
   padding: 0.75rem 1rem; /* Ajustement du padding pour plus d'espace */
   width: 100%; /* Ensure full width */
-  /* color: black;  Ensure text color */
-  text-align: left; /* Aligner le texte à gauche */
+  text-align: center; /* Aligner le texte à gauche */
   font-weight: 600;
   margin-bottom: 0.5rem;
   border-bottom: 1px solid var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dropdown-menu a {
   white-space: nowrap; /* Prevent text from wrapping */
   padding: 0.5rem 1rem; /* Add padding for better spacing */
   width: 100%; /* Ensure full width */
-  /* color: black;  Ensure text color */
   text-decoration: none; /* Remove underline */
   transition: all 0.2s ease; /* Add transition */
-  text-align: left; /* Aligner le texte à gauche */
+  text-align: center; /* Center align text */
   border-radius: 0.25rem; /* Coins arrondis */
+  display: flex; /* Add flex display */
+  justify-content: center; /* Center align items horizontally */
+  align-items: center; /* Center align items vertically */
 }
 
 .dropdown-menu a:hover {
@@ -374,7 +403,7 @@ iframe {
   width: auto; /* Ajustement de la largeur */
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alignement à gauche */
+  align-items: center; /* Alignement à gauche */
   margin-right: 1.5rem; /* Augmentation de l'espacement entre les colonnes */
   padding: 0.75rem 1rem; /* Ajustement du padding pour plus d'espace */
 }
@@ -383,8 +412,16 @@ iframe {
   width: 100%; /* Ensure full width */
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alignement à gauche */
+  align-items: center; /* Center align items */
   gap: 0.5rem; /* Espacement uniforme entre les éléments */
+}
+
+/* Ajustement pour la version mobile */
+.mobile-menu a span,
+.dropdown-menu a span {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
 }
 
 /* Adjust main dropdown button width */
@@ -464,4 +501,42 @@ iframe {
     color: black !important;
     border-color: black !important;
     background-color: white !important;
+}
+
+/* Assurer que tous les éléments avec --dark utilisent la même couleur noire */
+[data-theme="dark"] {
+  --dark: #040504;
+}
+
+[data-theme="light"] {
+  --dark: #040504;
+}
+
+/* Assurer que les icônes restent alignées avec le texte */
+.dropdown-menu h3 svg {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.dropdown-button {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Style du bouton quand son sous-menu est ouvert - Mode sombre */
+[data-theme="dark"] .dropdown-button[aria-expanded="true"] {
+  border-color: #FFFFFF !important;
+  border-width: 2px !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Style du bouton quand son sous-menu est ouvert - Mode clair */
+[data-theme="light"] .dropdown-button[aria-expanded="true"] {
+  border-color: #FFE600 !important;
+  border-width: 2px !important;
+  box-shadow: 0 0 0 2px rgba(255, 230, 0, 0.2);
+  transform: scale(1.05);
+  background-color: rgba(255, 230, 0, 0.1) !important;
 }
