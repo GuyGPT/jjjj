@@ -284,26 +284,26 @@ const Navbar = () => {
               </div>
             </DropdownMenu>
             <DropdownMenu title="Communauté" isOpen={openDropdown === 'Communauté'} toggleDropdown={toggleDropdown}>
-              <div className="py-1 w-44">
-                <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] text-center pb-1 mb-1 border-b border-[var(--primary)] mx-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+              <div className="w-full">
+                <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] text-center border-b border-[var(--primary)]" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
                   Réseaux Sociaux
                 </h3>
-                <div className="flex flex-col gap-0.5">
-                  <NavLink href="#facebook" isDropdown className="flex items-center px-3 py-1 hover:bg-opacity-10 hover:translate-x-1 transition-all duration-200">
-                    <Facebook size={16} className="flex-shrink-0 mr-3" />
-                    <span className="truncate">Facebook</span>
+                <div className="flex flex-col">
+                  <NavLink href="#facebook" isDropdown className="flex items-center hover:translate-x-1 transition-all duration-200">
+                    <Facebook size={16} />
+                    <span>Facebook</span>
                   </NavLink>
-                  <NavLink href="#telegram" isDropdown className="flex items-center px-3 py-1 hover:bg-opacity-10 hover:translate-x-1 transition-all duration-200">
-                    <Telegram size={16} className="flex-shrink-0 mr-3" />
-                    <span className="truncate">Telegram</span>
+                  <NavLink href="#telegram" isDropdown className="flex items-center hover:translate-x-1 transition-all duration-200">
+                    <Telegram size={16} />
+                    <span>Telegram</span>
                   </NavLink>
-                  <NavLink href="#twitter" isDropdown className="flex items-center px-3 py-1 hover:bg-opacity-10 hover:translate-x-1 transition-all duration-200">
-                    <Twitter size={16} className="flex-shrink-0 mr-3" />
-                    <span className="truncate">X (Twitter)</span>
+                  <NavLink href="#twitter" isDropdown className="flex items-center hover:translate-x-1 transition-all duration-200">
+                    <Twitter size={16} />
+                    <span>X (Twitter)</span>
                   </NavLink>
-                  <NavLink href="#whatsapp" isDropdown className="flex items-center px-3 py-1 hover:bg-opacity-10 hover:translate-x-1 transition-all duration-200">
-                    <WhatsApp size={16} className="flex-shrink-0 mr-3" />
-                    <span className="truncate">WhatsApp</span>
+                  <NavLink href="#whatsapp" isDropdown className="flex items-center hover:translate-x-1 transition-all duration-200">
+                    <WhatsApp size={16} />
+                    <span>WhatsApp</span>
                   </NavLink>
                 </div>
               </div>
@@ -654,7 +654,8 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 mt-8 w-auto rounded-md shadow-lg bg-white border border-black z-50 dropdown-menu transition-all duration-200 ease-in-out opacity-100 transform translate-y-0">
+        <div className="absolute left-0 mt-8 w-auto rounded-md shadow-lg bg-white border border-black z-50 dropdown-menu transition-all duration-200 ease-in-out opacity-100 transform translate-y-0"
+             data-menu={title}>
           <div className="py-1 flex">
             {children}
           </div>
