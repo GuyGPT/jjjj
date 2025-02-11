@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Menu, X, Moon, Sun, Wrench, Monitor, Briefcase, 
-  Leaf, BookOpen, Users, GraduationCap, Brain,
-  LineChart, Target, Award, HandshakeIcon, Presentation,
-  BarChart, Calendar, MessageCircle, Calculator, Laptop,
-  Building2, ChartPie, Trophy, Lightbulb, Facebook,
-  MessageSquare, Twitter, Send, X as XIcon, Whatsapp
-} from 'lucide-react';
+import { Menu, X, Moon, Sun, Wrench, Monitor, Briefcase, Leaf, BookOpen, Users } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -75,7 +68,7 @@ const Navbar = () => {
                 {/* Services Numériques */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Laptop className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Monitor className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Services Numériques
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -94,7 +87,7 @@ const Navbar = () => {
                 {/* Services d'Affaires */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Building2 className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Briefcase className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Services d'Affaires
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -126,7 +119,7 @@ const Navbar = () => {
                 {/* Formations Professionnelles */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <GraduationCap className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <BookOpen className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Formations Professionnelles
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -142,7 +135,7 @@ const Navbar = () => {
                 {/* Consultance et Accompagnement */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <HandshakeIcon className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
                     Consultance et Accompagnement
                   </h3>
                   <div className="mt-1 space-y-1">
@@ -156,194 +149,10 @@ const Navbar = () => {
                 </div>
               </div>
             </DropdownMenu>
-
-            <DropdownMenu title="Formation" isOpen={openDropdown === 'Formation'} toggleDropdown={toggleDropdown}>
-              <div className="space-y-1 max-h-[60vh] overflow-y-auto">
-                {/* Formations en Informatique */}
-                <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Monitor className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
-                    Formations en Informatique
-                  </h3>
-                  <div className="mt-1 space-y-1">
-                    <NavLink href="#msoffice" isDropdown className="flex items-center justify-between gap-4">
-                      <span className="text-left">MS WORD • MS EXCEL • POWERPOINT</span>
-                      <span className="flex gap-2 shrink-0">
-                        <span className="formation-badge">En ligne</span>
-                        <span className="formation-badge">Présentiel</span>
-                      </span>
-                    </NavLink>
-                    <NavLink href="#ai" isDropdown className="flex items-center justify-between gap-4">
-                      <span className="text-left">INTELLIGENCE ARTIFICIELLE</span>
-                      <span className="flex gap-2 shrink-0">
-                        <span className="formation-badge">En ligne</span>
-                        <span className="formation-badge">Présentiel</span>
-                      </span>
-                    </NavLink>
-                  </div>
-                </div>
-
-                {/* Ateliers de Développement Personnel */}
-                <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Brain className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
-                    Ateliers de Développement Personnel
-                  </h3>
-                  <div className="mt-1 space-y-1">
-                    <NavLink href="#time" isDropdown className="flex items-center justify-between gap-4">
-                      <span className="text-left">Gestion du Temps</span>
-                      <span className="flex gap-2 shrink-0">
-                        <span className="formation-badge">En ligne</span>
-                        <span className="formation-badge">Présentiel</span>
-                      </span>
-                    </NavLink>
-                    <NavLink href="#communication" isDropdown className="flex items-center justify-between gap-4">
-                      <span className="text-left">Communication Efficace</span>
-                      <span className="flex gap-2 shrink-0">
-                        <span className="formation-badge">En ligne</span>
-                        <span className="formation-badge">Présentiel</span>
-                      </span>
-                    </NavLink>
-                  </div>
-                </div>
-
-                {/* Intelligence Financière */}
-                <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Calculator className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
-                    Intelligence Financière
-                  </h3>
-                  <div className="mt-1 space-y-1">
-                    <NavLink href="#budget" isDropdown className="flex items-center justify-between gap-4">
-                      <span className="text-left">Gestion de Budget</span>
-                      <span className="flex gap-2 shrink-0">
-                        <span className="formation-badge">En ligne</span>
-                        <span className="formation-badge">Présentiel</span>
-                      </span>
-                    </NavLink>
-                    <NavLink href="#investment" isDropdown className="flex items-center justify-between gap-4">
-                      <span className="text-left">Investissement et Épargne</span>
-                      <span className="flex gap-2 shrink-0">
-                        <span className="formation-badge">En ligne</span>
-                        <span className="formation-badge">Présentiel</span>
-                      </span>
-                    </NavLink>
-                  </div>
-                </div>
-
-                {/* Liens importants */}
-                <div className="px-4 py-2 border-t border-[var(--primary)]">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap mt-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Calendar className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
-                    Informations Pratiques
-                  </h3>
-                  <div className="mt-1 space-y-1">
-                    <a href="#calendar" className="block w-full text-center px-4 py-3 rounded-md border transition-all info-button">
-                      Calendrier des Sessions
-                    </a>
-                    <a href="https://wa.me/your-number" className="block w-full text-center px-4 py-3 rounded-md border transition-all info-button">
-                      Inscription aux Ateliers (WhatsApp)
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </DropdownMenu>
-
-            <DropdownMenu title="Coaching/Mentorat" isOpen={openDropdown === 'Coaching/Mentorat'} toggleDropdown={toggleDropdown}>
-              <div className="space-y-1 max-h-[60vh] overflow-y-auto">
-                {/* Coaching Professionnel */}
-                <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <LineChart className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
-                    Coaching Professionnel
-                  </h3>
-                  <div className="mt-1 space-y-1">
-                    <NavLink href="#developpement-carriere" isDropdown>
-                      <span className="text-left">Développement de Carrière</span>
-                    </NavLink>
-                    <NavLink href="#leadership" isDropdown>
-                      <span className="text-left">Leadership et Management</span>
-                    </NavLink>
-                  </div>
-                </div>
-
-                {/* Mentorat Personnalisé */}
-                <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Target className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
-                    Mentorat Personnalisé
-                  </h3>
-                  <div className="mt-1 space-y-1">
-                    <NavLink href="#objectifs-vie" isDropdown>
-                      <span className="text-left">Objectifs de Vie</span>
-                    </NavLink>
-                    <NavLink href="#gestion-stress" isDropdown>
-                      <span className="text-left">Gestion du Stress</span>
-                    </NavLink>
-                  </div>
-                </div>
-
-                {/* Programmes de Mentorat */}
-                <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Award className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
-                    Programmes de Mentorat
-                  </h3>
-                  <div className="mt-1 space-y-1">
-                    <NavLink href="#mentorat-entrepreneurs" isDropdown>
-                      <span className="text-left">Mentorat pour Entrepreneurs</span>
-                    </NavLink>
-                    <NavLink href="#mentorat-etudiants" isDropdown>
-                      <span className="text-left">Mentorat pour Étudiants</span>
-                    </NavLink>
-                  </div>
-                </div>
-
-                {/* Conférences et Webinaires */}
-                <div className="px-4 py-2 border-t border-[var(--primary)]">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap mt-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Presentation className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
-                    Conférences et Webinaires
-                  </h3>
-                  <div className="mt-1 space-y-1">
-                    <a href="https://wa.me/your-number" className="block w-full text-center px-4 py-3 rounded-md border transition-all info-button">
-                      Inscription aux Ateliers (WhatsApp)
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </DropdownMenu>
-
-            <DropdownMenu title="Communauté" isOpen={openDropdown === 'Communauté'} toggleDropdown={toggleDropdown}>
-              <div className="space-y-1 max-h-[60vh] overflow-y-auto social-icons">
-                <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap mb-4" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
-                    Réseaux Sociaux
-                  </h3>
-                  <div className="mt-1 space-y-3">
-                    <NavLink href="https://facebook.com/your-page" isDropdown className="flex items-center gap-3 px-4 py-2">
-                      <Facebook size={20} className="shrink-0" />
-                      <span className="text-left">Facebook</span>
-                    </NavLink>
-                    <NavLink href="https://t.me/your-channel" isDropdown className="flex items-center gap-3 px-4 py-2">
-                      <Send size={20} className="shrink-0" />
-                      <span className="text-left">Telegram</span>
-                    </NavLink>
-                    <NavLink href="https://twitter.com/your-handle" isDropdown className="flex items-center gap-3 px-4 py-2">
-                      <XIcon size={20} className="shrink-0" />
-                      <span className="text-left">X Officiel</span>
-                    </NavLink>
-                    <NavLink href="https://wa.me/your-number" isDropdown className="flex items-center gap-3 px-4 py-2">
-                      <Whatsapp size={20} className="shrink-0" />
-                      <span className="text-left">WhatsApp</span>
-                    </NavLink>
-                  </div>
-                </div>
-              </div>
-            </DropdownMenu>
-
+            <NavLink href="#formation">Formation</NavLink>
+            <NavLink href="#coaching">Coaching/Mentorat</NavLink>
             <NavLink href="#contact">Contact</NavLink>
+            <NavLink href="#communaute">Communauté</NavLink>
             <button
               onClick={toggleTheme}
               className="inline-flex items-center justify-center p-2 rounded-md border transition-colors"
@@ -383,7 +192,7 @@ const Navbar = () => {
             <MobileNavLink href="#formation" onClick={() => setIsMenuOpen(false)}>
               Formation
             </MobileNavLink>
-            <MobileNavLink href="#coaching-mentorat" onClick={() => setIsMenuOpen(false)}>
+            <MobileNavLink href="#coaching" onClick={() => setIsMenuOpen(false)}>
               Coaching/Mentorat
             </MobileNavLink>
             <MobileNavLink href="#contact" onClick={() => setIsMenuOpen(false)}>
@@ -529,12 +338,10 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
     <div className="relative">
       <button
         onClick={() => toggleDropdown(title)}
-        className={`px-3 py-2 rounded-md text-sm font-medium border-2 transition-colors flex items-center gap-1 dropdown-button ${isOpen ? 'active border-opacity-100' : 'border-opacity-50'}`}
+        className="px-3 py-2 rounded-md text-sm font-medium border transition-colors flex items-center gap-1 dropdown-button"
         style={{
           color: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
-          borderColor: isOpen 
-            ? (document.body.getAttribute('data-theme') === 'dark' ? '#FFFFFF' : '#FFE600')
-            : (document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF'),
+          borderColor: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
           backgroundColor: '#040504'
         }}
       >
@@ -542,11 +349,8 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
       </button>
 
       {isOpen && (
-        <div className={`absolute left-0 mt-4 w-auto rounded-lg shadow-2xl bg-white border border-black z-50 dropdown-menu transition-all duration-300 ease-in-out transform origin-top ${
-          title === 'Formation' ? 'min-w-[500px]' : 
-          title === 'Coaching/Mentorat' ? 'min-w-[400px]' : ''
-        }`}>
-          <div className={`py-4 ${title === 'Formation' || title === 'Coaching/Mentorat' ? 'px-4' : 'flex space-x-12'}`}>
+        <div className="absolute left-0 mt-8 w-auto rounded-md shadow-lg bg-white border border-black z-50 dropdown-menu transition-all duration-200 ease-in-out opacity-100 transform translate-y-0">
+          <div className="py-1 flex">
             {children}
           </div>
         </div>
@@ -558,9 +362,7 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
 const NavLink = ({ href, children, isDropdown, className }: { href: string; children: React.ReactNode; isDropdown?: boolean; className?: string }) => (
   <a
     href={href}
-    className={`px-3 py-2 rounded-md text-sm font-medium border transition-colors ${
-      isDropdown ? 'block w-full text-left dropdown-link hover:pl-4' : ''
-    } ${className || ''}`}
+    className={`px-3 py-2 rounded-md text-sm font-medium border transition-colors ${isDropdown ? 'block w-full text-left dropdown-link' : ''} ${className || ''}`}
     style={{
       color: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
       borderColor: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
