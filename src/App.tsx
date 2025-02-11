@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -18,13 +18,6 @@ function App() {
     setTheme(savedTheme);
     document.body.setAttribute('data-theme', savedTheme);
   }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.body.setAttribute('data-theme', newTheme);
-  };
 
   return (
     <div className="bg-[#040504] text-[var(--light)] min-h-screen w-full overflow-x-hidden">

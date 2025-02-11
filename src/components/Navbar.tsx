@@ -228,7 +228,60 @@ const Navbar = () => {
                 </div>
               </div>
             </DropdownMenu>
-            <NavLink href="#coaching">Coaching/Mentorat</NavLink>
+            <DropdownMenu title="Coaching/Mentorat" isOpen={openDropdown === 'Coaching/Mentorat'} toggleDropdown={toggleDropdown}>
+              <div className="space-y-1 max-h-[60vh] overflow-y-auto">
+                {/* Coaching Professionnel */}
+                <div className="px-4 py-2">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    <Briefcase className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    Coaching Professionnel
+                  </h3>
+                  <div className="mt-1 space-y-1">
+                    <NavLink href="#developpement-carriere" isDropdown>
+                      <span className="text-center block w-full">Développement de Carrière</span>
+                    </NavLink>
+                    <NavLink href="#leadership" isDropdown>
+                      <span className="text-center block w-full">Leadership et Management</span>
+                    </NavLink>
+                  </div>
+                </div>
+
+                {/* Mentorat Personnalisé */}
+                <div className="px-4 py-2">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    Mentorat Personnalisé
+                  </h3>
+                  <div className="mt-1 space-y-1">
+                    <NavLink href="#objectifs-vie" isDropdown>
+                      <span className="text-center block w-full">Objectifs de Vie</span>
+                    </NavLink>
+                    <NavLink href="#gestion-stress" isDropdown>
+                      <span className="text-center block w-full">Gestion du Stress</span>
+                    </NavLink>
+                  </div>
+                </div>
+
+                {/* Programmes de Mentorat */}
+                <div className="px-4 py-2">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    <Lightbulb className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    Programmes de Mentorat
+                  </h3>
+                  <div className="mt-1 space-y-1">
+                    <NavLink href="#mentorat-entrepreneurs" isDropdown>
+                      <span className="text-center block w-full">Mentorat pour Entrepreneurs</span>
+                    </NavLink>
+                    <NavLink href="#mentorat-etudiants" isDropdown>
+                      <span className="text-center block w-full">Mentorat pour Étudiants</span>
+                    </NavLink>
+                    <NavLink href="#conferences" isDropdown>
+                      <span className="text-center block w-full">Conférences et Webinaires</span>
+                    </NavLink>
+                  </div>
+                </div>
+              </div>
+            </DropdownMenu>
             <NavLink href="#communaute">Communauté</NavLink>
             <NavLink href="#contact">Contact</NavLink>
             <button
@@ -465,6 +518,64 @@ const Navbar = () => {
                 <span className="text-center block w-full">Inscription aux Ateliers</span>
               </MobileNavLink>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Coaching/Mentorat Menu */}
+      <div
+        className={`fixed top-0 left-0 w-3/4 h-full bg-[#040504] z-50 transform transition-transform duration-300 ${isFormationMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+      >
+        <div className="flex items-center justify-between p-4">
+          <span className="text-lg font-bold text-[#F8E061]">Coaching/Mentorat</span>
+          <button onClick={toggleFormationMenu} className="p-2 text-[#F8E061]">
+            <X size={24} />
+          </button>
+        </div>
+        <div className="px-2 pt-2 pb-3 space-y-2 max-h-[calc(100vh-64px)] overflow-y-auto">
+          {/* Coaching Professionnel */}
+          <div className="mb-2">
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+              <Briefcase className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+              Coaching Professionnel
+            </h3>
+            <MobileNavLink href="#developpement-carriere" onClick={toggleFormationMenu} isDropdown>
+              <span className="text-center block w-full">Développement de Carrière</span>
+            </MobileNavLink>
+            <MobileNavLink href="#leadership" onClick={toggleFormationMenu} isDropdown>
+              <span className="text-center block w-full">Leadership et Management</span>
+            </MobileNavLink>
+          </div>
+
+          {/* Mentorat Personnalisé */}
+          <div className="mb-2">
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+              <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+              Mentorat Personnalisé
+            </h3>
+            <MobileNavLink href="#objectifs-vie" onClick={toggleFormationMenu} isDropdown>
+              <span className="text-center block w-full">Objectifs de Vie</span>
+            </MobileNavLink>
+            <MobileNavLink href="#gestion-stress" onClick={toggleFormationMenu} isDropdown>
+              <span className="text-center block w-full">Gestion du Stress</span>
+            </MobileNavLink>
+          </div>
+
+          {/* Programmes de Mentorat */}
+          <div className="mb-2">
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+              <Lightbulb className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+              Programmes de Mentorat
+            </h3>
+            <MobileNavLink href="#mentorat-entrepreneurs" onClick={toggleFormationMenu} isDropdown>
+              <span className="text-center block w-full">Mentorat pour Entrepreneurs</span>
+            </MobileNavLink>
+            <MobileNavLink href="#mentorat-etudiants" onClick={toggleFormationMenu} isDropdown>
+              <span className="text-center block w-full">Mentorat pour Étudiants</span>
+            </MobileNavLink>
+            <MobileNavLink href="#conferences" onClick={toggleFormationMenu} isDropdown>
+              <span className="text-center block w-full">Conférences et Webinaires</span>
+            </MobileNavLink>
           </div>
         </div>
       </div>
