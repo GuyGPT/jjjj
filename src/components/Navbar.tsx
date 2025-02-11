@@ -5,7 +5,8 @@ import {
   Monitor, Briefcase, Users, BookOpen,
   Settings, Tool, Wind, Globe,
   Code, Database, Lightbulb, Building,
-  FileText, Printer, Cloud, BarChart
+  FileText, Printer, Cloud, BarChart,
+  Facebook, Send as Telegram, Twitter, MessageSquare as WhatsApp
 } from 'lucide-react';
 
 const Navbar = () => {
@@ -282,7 +283,33 @@ const Navbar = () => {
                 </div>
               </div>
             </DropdownMenu>
-            <NavLink href="#communaute">Communauté</NavLink>
+            <DropdownMenu title="Communauté" isOpen={openDropdown === 'Communauté'} toggleDropdown={toggleDropdown}>
+              <div className="space-y-1 max-h-[60vh] overflow-y-auto">
+                <div className="px-4 py-2">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    Réseaux Sociaux
+                  </h3>
+                  <div className="mt-1 space-y-1">
+                    <NavLink href="#facebook" isDropdown className="flex items-center justify-center gap-2">
+                      <Facebook size={16} />
+                      <span>Facebook</span>
+                    </NavLink>
+                    <NavLink href="#telegram" isDropdown className="flex items-center justify-center gap-2">
+                      <Telegram size={16} />
+                      <span>Telegram</span>
+                    </NavLink>
+                    <NavLink href="#twitter" isDropdown className="flex items-center justify-center gap-2">
+                      <Twitter size={16} />
+                      <span>X (Twitter)</span>
+                    </NavLink>
+                    <NavLink href="#whatsapp" isDropdown className="flex items-center justify-center gap-2">
+                      <WhatsApp size={16} />
+                      <span>WhatsApp</span>
+                    </NavLink>
+                  </div>
+                </div>
+              </div>
+            </DropdownMenu>
             <NavLink href="#contact">Contact</NavLink>
             <button
               onClick={toggleTheme}
@@ -326,9 +353,31 @@ const Navbar = () => {
             <MobileNavLink href="#coaching" onClick={() => setIsMenuOpen(false)}>
               Coaching/Mentorat
             </MobileNavLink>
-            <MobileNavLink href="#communaute" onClick={() => setIsMenuOpen(false)}>
-              Communauté
-            </MobileNavLink>
+            <div className="px-2 py-2 border rounded-md" style={{
+              borderColor: theme === 'dark' ? '#F8E061' : '#FFFFFF',
+            }}>
+              <h3 className="text-sm font-semibold mb-2 text-center" style={{ color: theme === 'dark' ? '#F8E061' : '#FFFFFF' }}>
+                Communauté
+              </h3>
+              <div className="grid grid-cols-2 gap-2">
+                <MobileNavLink href="#facebook" onClick={() => setIsMenuOpen(false)} className="flex items-center justify-center gap-2">
+                  <Facebook size={16} />
+                  <span>Facebook</span>
+                </MobileNavLink>
+                <MobileNavLink href="#telegram" onClick={() => setIsMenuOpen(false)} className="flex items-center justify-center gap-2">
+                  <Telegram size={16} />
+                  <span>Telegram</span>
+                </MobileNavLink>
+                <MobileNavLink href="#twitter" onClick={() => setIsMenuOpen(false)} className="flex items-center justify-center gap-2">
+                  <Twitter size={16} />
+                  <span>X (Twitter)</span>
+                </MobileNavLink>
+                <MobileNavLink href="#whatsapp" onClick={() => setIsMenuOpen(false)} className="flex items-center justify-center gap-2">
+                  <WhatsApp size={16} />
+                  <span>WhatsApp</span>
+                </MobileNavLink>
+              </div>
+            </div>
             <MobileNavLink href="#contact" onClick={() => setIsMenuOpen(false)}>
               Contact
             </MobileNavLink>
