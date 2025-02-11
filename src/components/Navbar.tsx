@@ -209,12 +209,14 @@ const Navbar = () => {
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap mb-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
                     Autres Informations
                   </h3>
-                  <NavLink href="#calendrier" isDropdown>
-                    <span className="text-left">Calendrier des Sessions</span>
-                  </NavLink>
-                  <NavLink href="#inscription" isDropdown>
-                    <span className="text-left">Inscription aux Ateliers</span>
-                  </NavLink>
+                  <div className="mt-1 space-y-1">
+                    <NavLink href="#calendrier" isDropdown>
+                      <span className="text-left">Calendrier des Sessions</span>
+                    </NavLink>
+                    <NavLink href="#inscription" isDropdown>
+                      <span className="text-left">Inscription aux Ateliers</span>
+                    </NavLink>
+                  </div>
                 </div>
               </div>
             </DropdownMenu>
@@ -450,12 +452,14 @@ const Navbar = () => {
             <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap mb-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
               Autres Informations
             </h3>
-            <MobileNavLink href="#calendrier" onClick={toggleFormationMenu} isDropdown>
-              <span className="text-left">Calendrier des Sessions</span>
-            </MobileNavLink>
-            <MobileNavLink href="#inscription" onClick={toggleFormationMenu} isDropdown>
-              <span className="text-left">Inscription aux Ateliers</span>
-            </MobileNavLink>
+            <div className="flex flex-col space-y-6">
+              <MobileNavLink href="#calendrier" onClick={toggleFormationMenu} isDropdown>
+                <span className="text-left">Calendrier des Sessions</span>
+              </MobileNavLink>
+              <MobileNavLink href="#inscription" onClick={toggleFormationMenu} isDropdown>
+                <span className="text-left">Inscription aux Ateliers</span>
+              </MobileNavLink>
+            </div>
           </div>
         </div>
       </div>
