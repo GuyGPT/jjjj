@@ -313,12 +313,14 @@ iframe {
   .dropdown-menu {
     border-left: 4px solid var(--primary);
     border-right: 4px solid var(--primary);
-    top: calc(100% + 0.75rem); /* Augmentation de l'espace entre le bouton et le menu */
+    top: calc(100% + 0.75rem); /* Espacement entre le bouton et le menu */
     transform-origin: top center;
     animation: slideInDesktop 0.3s ease-in-out forwards;
     display: flex;
     flex-direction: row;
-    margin-top: 0.5rem; /* Ajout d'une marge supplémentaire */
+    margin-top: 0.75rem; /* Marge supplémentaire consistante */
+    max-height: calc(90vh - 4rem); /* Hauteur maximale pour éviter le dépassement */
+    overflow-y: auto; /* Permettre le défilement si nécessaire */
   }
 }
 
@@ -343,10 +345,13 @@ iframe {
 
 .dropdown-menu h3 {
   white-space: nowrap; /* Prevent text from wrapping */
-  padding: 0.5rem 1rem; /* Add padding for better spacing */
+  padding: 0.75rem 1rem; /* Ajustement du padding pour plus d'espace */
   width: 100%; /* Ensure full width */
   /* color: black;  Ensure text color */
-  text-align: center; /* Center align text */
+  text-align: left; /* Aligner le texte à gauche */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--primary);
 }
 
 .dropdown-menu a {
@@ -355,8 +360,9 @@ iframe {
   width: 100%; /* Ensure full width */
   /* color: black;  Ensure text color */
   text-decoration: none; /* Remove underline */
-  transition: background-color 0.3s ease; /* Add transition */
-  text-align: center; /* Center align text */
+  transition: all 0.2s ease; /* Add transition */
+  text-align: left; /* Aligner le texte à gauche */
+  border-radius: 0.25rem; /* Coins arrondis */
 }
 
 .dropdown-menu a:hover {
@@ -369,7 +375,8 @@ iframe {
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Alignement à gauche */
-  margin-right: 10px; /* Espacement entre les colonnes */
+  margin-right: 1.5rem; /* Augmentation de l'espacement entre les colonnes */
+  padding: 0.75rem 1rem; /* Ajustement du padding pour plus d'espace */
 }
 
 .dropdown-menu .mt-1.space-y-1 {
@@ -377,6 +384,7 @@ iframe {
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Alignement à gauche */
+  gap: 0.5rem; /* Espacement uniforme entre les éléments */
 }
 
 /* Adjust main dropdown button width */

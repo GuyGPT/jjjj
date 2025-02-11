@@ -6,6 +6,7 @@ const Navbar = () => {
   const [theme, setTheme] = useState('dark');
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
+  const [isFormationMenuOpen, setIsFormationMenuOpen] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -26,6 +27,10 @@ const Navbar = () => {
 
   const toggleServicesMenu = () => {
     setIsServicesMenuOpen(!isServicesMenuOpen);
+  };
+
+  const toggleFormationMenu = () => {
+    setIsFormationMenuOpen(!isFormationMenuOpen);
   };
 
   return (
@@ -149,6 +154,70 @@ const Navbar = () => {
                 </div>
               </div>
             </DropdownMenu>
+            <DropdownMenu title="Formation" isOpen={openDropdown === 'Formation'} toggleDropdown={toggleDropdown}>
+              <div className="space-y-1 max-h-[60vh] overflow-y-auto">
+                {/* Formations en Informatique */}
+                <div className="px-4 py-2">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    <Monitor className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    Formations en Informatique
+                  </h3>
+                  <div className="mt-1 space-y-1">
+                    <NavLink href="#bureautique" isDropdown>
+                      <span className="text-left">Bureautique : MS Word, Excel, PowerPoint</span>
+                    </NavLink>
+                    <NavLink href="#ia" isDropdown>
+                      <span className="text-left">Intelligence Artificielle</span>
+                    </NavLink>
+                  </div>
+                </div>
+
+                {/* Ateliers de Développement Personnel */}
+                <div className="px-4 py-2">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    Ateliers de Développement Personnel
+                  </h3>
+                  <div className="mt-1 space-y-1">
+                    <NavLink href="#gestion-temps" isDropdown>
+                      <span className="text-left">Gestion du Temps</span>
+                    </NavLink>
+                    <NavLink href="#communication" isDropdown>
+                      <span className="text-left">Communication Efficace</span>
+                    </NavLink>
+                  </div>
+                </div>
+
+                {/* Intelligence Financière */}
+                <div className="px-4 py-2">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    <Briefcase className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+                    Intelligence Financière
+                  </h3>
+                  <div className="mt-1 space-y-1">
+                    <NavLink href="#gestion-budget" isDropdown>
+                      <span className="text-left">Gestion de Budget</span>
+                    </NavLink>
+                    <NavLink href="#investissement" isDropdown>
+                      <span className="text-left">Investissement et Épargne</span>
+                    </NavLink>
+                  </div>
+                </div>
+
+                {/* Calendrier et Inscription */}
+                <div className="px-4 py-2">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap mb-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                    Autres Informations
+                  </h3>
+                  <NavLink href="#calendrier" isDropdown>
+                    <span className="text-left">Calendrier des Sessions</span>
+                  </NavLink>
+                  <NavLink href="#inscription" isDropdown>
+                    <span className="text-left">Inscription aux Ateliers</span>
+                  </NavLink>
+                </div>
+              </div>
+            </DropdownMenu>
             <NavLink href="#formation">Formation</NavLink>
             <NavLink href="#coaching">Coaching/Mentorat</NavLink>
             <NavLink href="#contact">Contact</NavLink>
@@ -189,7 +258,7 @@ const Navbar = () => {
             <MobileNavLink href="#services" onClick={() => { setIsMenuOpen(false); toggleServicesMenu(); }}>
               Services
             </MobileNavLink>
-            <MobileNavLink href="#formation" onClick={() => setIsMenuOpen(false)}>
+            <MobileNavLink href="#formation" onClick={() => { setIsMenuOpen(false); toggleFormationMenu(); }}>
               Formation
             </MobileNavLink>
             <MobileNavLink href="#coaching" onClick={() => setIsMenuOpen(false)}>
@@ -318,6 +387,74 @@ const Navbar = () => {
             </MobileNavLink>
             <MobileNavLink href="#developpement-innovation" onClick={toggleServicesMenu} isDropdown>
               <span className="text-left">Développement Personnel et Innovation</span>
+            </MobileNavLink>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Formation Menu */}
+      <div
+        className={`fixed top-0 left-0 w-3/4 h-full bg-[#040504] z-50 transform transition-transform duration-300 ${isFormationMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+      >
+        <div className="flex items-center justify-between p-4">
+          <span className="text-lg font-bold text-[#F8E061]">Formation</span>
+          <button onClick={toggleFormationMenu} className="p-2 text-[#F8E061]">
+            <X size={24} />
+          </button>
+        </div>
+        <div className="px-2 pt-2 pb-3 space-y-2 max-h-[calc(100vh-64px)] overflow-y-auto">
+          {/* Formations en Informatique */}
+          <div className="mb-2">
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+              <Monitor className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+              Formations en Informatique
+            </h3>
+            <MobileNavLink href="#bureautique" onClick={toggleFormationMenu} isDropdown>
+              <span className="text-left">Bureautique : MS Word, Excel, PowerPoint</span>
+            </MobileNavLink>
+            <MobileNavLink href="#ia" onClick={toggleFormationMenu} isDropdown>
+              <span className="text-left">Intelligence Artificielle</span>
+            </MobileNavLink>
+          </div>
+
+          {/* Ateliers de Développement Personnel */}
+          <div className="mb-2">
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+              <Users className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+              Ateliers de Développement Personnel
+            </h3>
+            <MobileNavLink href="#gestion-temps" onClick={toggleFormationMenu} isDropdown>
+              <span className="text-left">Gestion du Temps</span>
+            </MobileNavLink>
+            <MobileNavLink href="#communication" onClick={toggleFormationMenu} isDropdown>
+              <span className="text-left">Communication Efficace</span>
+            </MobileNavLink>
+          </div>
+
+          {/* Intelligence Financière */}
+          <div className="mb-2">
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+              <Briefcase className="mr-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }} />
+              Intelligence Financière
+            </h3>
+            <MobileNavLink href="#gestion-budget" onClick={toggleFormationMenu} isDropdown>
+              <span className="text-left">Gestion de Budget</span>
+            </MobileNavLink>
+            <MobileNavLink href="#investissement" onClick={toggleFormationMenu} isDropdown>
+              <span className="text-left">Investissement et Épargne</span>
+            </MobileNavLink>
+          </div>
+
+          {/* Calendrier et Inscription */}
+          <div className="mb-2">
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap mb-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+              Autres Informations
+            </h3>
+            <MobileNavLink href="#calendrier" onClick={toggleFormationMenu} isDropdown>
+              <span className="text-left">Calendrier des Sessions</span>
+            </MobileNavLink>
+            <MobileNavLink href="#inscription" onClick={toggleFormationMenu} isDropdown>
+              <span className="text-left">Inscription aux Ateliers</span>
             </MobileNavLink>
           </div>
         </div>
