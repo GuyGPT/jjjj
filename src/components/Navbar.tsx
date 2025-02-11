@@ -284,29 +284,27 @@ const Navbar = () => {
               </div>
             </DropdownMenu>
             <DropdownMenu title="Communauté" isOpen={openDropdown === 'Communauté'} toggleDropdown={toggleDropdown}>
-              <div className="space-y-1 max-h-[60vh] overflow-y-auto">
-                <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
-                    Réseaux Sociaux
-                  </h3>
-                  <div className="mt-1 space-y-1">
-                    <NavLink href="#facebook" isDropdown className="flex items-center justify-center gap-2">
-                      <Facebook size={16} />
-                      <span>Facebook</span>
-                    </NavLink>
-                    <NavLink href="#telegram" isDropdown className="flex items-center justify-center gap-2">
-                      <Telegram size={16} />
-                      <span>Telegram</span>
-                    </NavLink>
-                    <NavLink href="#twitter" isDropdown className="flex items-center justify-center gap-2">
-                      <Twitter size={16} />
-                      <span>X (Twitter)</span>
-                    </NavLink>
-                    <NavLink href="#whatsapp" isDropdown className="flex items-center justify-center gap-2">
-                      <WhatsApp size={16} />
-                      <span>WhatsApp</span>
-                    </NavLink>
-                  </div>
+              <div className="py-1 w-44">
+                <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] text-center pb-1 mb-1 border-b border-[var(--primary)] mx-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '' }}>
+                  Réseaux Sociaux
+                </h3>
+                <div className="flex flex-col gap-0.5">
+                  <NavLink href="#facebook" isDropdown className="flex items-center px-3 py-1 hover:bg-opacity-10 hover:translate-x-1 transition-all duration-200">
+                    <Facebook size={16} className="flex-shrink-0 mr-3" />
+                    <span className="truncate">Facebook</span>
+                  </NavLink>
+                  <NavLink href="#telegram" isDropdown className="flex items-center px-3 py-1 hover:bg-opacity-10 hover:translate-x-1 transition-all duration-200">
+                    <Telegram size={16} className="flex-shrink-0 mr-3" />
+                    <span className="truncate">Telegram</span>
+                  </NavLink>
+                  <NavLink href="#twitter" isDropdown className="flex items-center px-3 py-1 hover:bg-opacity-10 hover:translate-x-1 transition-all duration-200">
+                    <Twitter size={16} className="flex-shrink-0 mr-3" />
+                    <span className="truncate">X (Twitter)</span>
+                  </NavLink>
+                  <NavLink href="#whatsapp" isDropdown className="flex items-center px-3 py-1 hover:bg-opacity-10 hover:translate-x-1 transition-all duration-200">
+                    <WhatsApp size={16} className="flex-shrink-0 mr-3" />
+                    <span className="truncate">WhatsApp</span>
+                  </NavLink>
                 </div>
               </div>
             </DropdownMenu>
